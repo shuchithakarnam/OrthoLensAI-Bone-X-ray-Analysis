@@ -229,3 +229,10 @@ Thumbs.db
 
 # Streamlit
 .streamlit/secrets.toml
+
+# AI model weights
+*.pt
+*.pth
+*.onnx
+*.h5
+*.keras
