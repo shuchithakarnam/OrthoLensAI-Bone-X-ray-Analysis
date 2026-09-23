@@ -1,4 +1,4 @@
-// MediScan - Frontend Script
+// OrthoLens AI - Frontend Script
 document.addEventListener('DOMContentLoaded', function() {
     // Backend API URL - update this to match your server address
     const API_URL = 'http://localhost:8000';
