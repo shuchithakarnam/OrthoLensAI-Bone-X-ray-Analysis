@@ -113,3 +113,40 @@ OrthoLensAI-Bone-X-ray-Analysis/
 ├── requirements.txt
 └── README.md
 ```
+
+# Important limitations
+
+## Dataset-dependent performance
+
+The model was trained on a specific X-ray dataset, so performance can vary when images differ substantially from the training data in anatomy, positioning, image quality, or acquisition style.
+
+## Not a medical diagnostic tool
+
+Model predictions are provided for research, education, and demonstration purposes. They should not be used as a substitute for professional medical interpretation.
+
+## Visual explanation
+
+The current project includes a heatmap-style visual explanation generated from detected regions. It should not be described as a verified gradient-based Grad-CAM implementation.
+
+# Future development
+
+## Potential improvements include:
+
+Evaluation across additional X-ray datasets
+More structured model validation and performance metrics
+Improved generalization to different image distributions
+Better explainability methods
+More robust deployment architecture
+Expanded experimentation with fracture detection models
+
+# Project
+
+OrthoLens AI was developed as an exploration of how machine learning, computer vision, backend APIs, and web interfaces can be combined into a single working application.
+
+## The project focuses on making the complete workflow understandable:
+
+image → inference → detection → visualization → user interface
+
+# Disclaimer
+
+OrthoLens AI is an educational and research-oriented software project. Its outputs are not intended for clinical diagnosis, treatment decisions, or emergency medical use.
