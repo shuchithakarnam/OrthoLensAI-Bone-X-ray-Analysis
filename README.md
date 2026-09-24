@@ -52,3 +52,64 @@ Confidence + Bounding Boxes
 Annotated Result
      ↓
 Visual Explanation
+
+```
+##
+## Technology Stack
+
+## Machine Learning
+Python,
+PyTorch,
+Ultralytics YOLO
+
+## Backend
+FastAPI,
+Uvicorn,
+Python Multipart,
+Pillow,
+OpenCV,
+NumPy,
+Matplotlib
+
+## Frontend
+HTML5,
+CSS3,
+JavaScript,
+Font Awesome,
+Google Fonts
+
+## Deployment
+Render
+
+## Project Structure
+
+```text
+OrthoLensAI-Bone-X-ray-Analysis/
+│
+├── backend/
+│   ├── app.py
+│   └── models/
+│       └── model.pt
+│
+├── frontend/
+│   ├── index.html
+│   ├── about.html
+│   ├── features.html
+│   ├── detect.html
+│   ├── detect-script.js
+│   ├── gradcam.html
+│   ├── project.html
+│   ├── nav-template.html
+│   ├── nav-handler.js
+│   ├── footer-template.html
+│   ├── footer-handler.js
+│   ├── footer-styles.css
+│   ├── styles.css
+│   └── images/
+│
+├── .python-version
+├── .gitignore
+├── LICENSE
+├── requirements.txt
+└── README.md
+```
