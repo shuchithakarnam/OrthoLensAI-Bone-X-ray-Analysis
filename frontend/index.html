@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
       :root {
-        --primary: #0062FF;
-        --primary-dark: #0048c2;
-        --secondary: #EAEFFF;
-        --accent: #00D1FF;
-        --text: #15173D;
-        --text-light: #596080;
+        --primary: #2F6F3E;
+        --primary-dark: #245A31;
+        --secondary: #E8F0E8;
+        --accent: #7FAF85;
+        --text: #18321F;
+        --text-light: #5F6F63;
         --surface-1: #FFFFFF;
-        --surface-2: #F5F7FF;
+        --surface-2: #F5F8F3;
         --white: #FFFFFF;
         --heading-font: 'Inter', sans-serif;
         --body-font: 'Inter', sans-serif;
@@ -396,15 +396,15 @@
       }
 
       .feature:nth-child(1) .feature-icon {
-        background: linear-gradient(135deg, #4BA3FF, #0062FF);
+        background: linear-gradient(135deg, #78A982, #2F6F3E);
       }
 
       .feature:nth-child(2) .feature-icon {
-        background: linear-gradient(135deg, #00D1FF, #00A0FF);
+        background: linear-gradient(135deg, #7FAF85, #5F9469);
       }
 
       .feature:nth-child(3) .feature-icon {
-        background: linear-gradient(135deg, #5E7BFE, #3851E0);
+        background: linear-gradient(135deg, #628D6B, #356B42);
       }
 
       .feature-title {
@@ -1143,6 +1143,32 @@
         }
       }
     </style>
+      <style>
+  .hero-buttons .btn-primary {
+    background: #2F6F3E !important;
+    color: #FFFFFF !important;
+    border: 1px solid #2F6F3E !important;
+    box-shadow: 0 6px 16px rgba(47, 111, 62, 0.18) !important;
+  }
+
+  .hero-buttons .btn-primary:hover {
+    background: #245A31 !important;
+    border-color: #245A31 !important;
+    transform: translateY(-2px);
+  }
+
+  .hero-buttons .btn-secondary {
+    background: transparent !important;
+    color: #2F6F3E !important;
+    border: 1px solid #2F6F3E !important;
+  }
+
+  .hero-buttons .btn-secondary:hover {
+    background: #E8F0E8 !important;
+    color: #245A31 !important;
+    transform: translateY(-2px);
+  }
+</style>
   </head>
 
   <body>
@@ -1269,133 +1295,6 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials">
-      <div class="container">
-        <h2 class="section-title">What Medical Professionals Say</h2>
-        <p class="section-description">
-          Healthcare specialists trust our technology for accurate and rapid fracture detection
-        </p>
-        <div class="testimonials-grid">
-          <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
-            <p class="testimonial-quote">
-              OrthoLens AI is a research-oriented project exploring AI-assisted bone X-ray analysis and explainable model outputs.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">AR</div>
-              <div class="testimonial-info">
-                <div class="testimonial-name">Dr. Arun Rathore</div>
-                <div class="testimonial-role">Head of Orthopedics</div>
-                <div class="testimonial-hospital">Research / Educational Project</div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-            <p class="testimonial-quote">
-              The accuracy of OrthoLens AI's AI system is remarkable. As a radiologist with 15 years of experience, I've found it helps identify subtle fractures that might be missed in busy clinical settings.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">SP</div>
-              <div class="testimonial-info">
-                <div class="testimonial-name">Dr. Sarita Patel</div>
-                <div class="testimonial-role">Senior Radiologist</div>
-                <div class="testimonial-hospital">Fortis Memorial, Gurugram</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SUCCESS STORIES SECTION -->
-    <section class="success-stories">
-      <div class="success-stories-bg"></div>
-      <div class="container">
-        <div class="success-stories-header">
-          <h2 class="success-stories-title">Real-World Success Stories</h2>
-          <p class="success-stories-subtitle">
-            Discover how OrthoLens AI is transforming healthcare practices and improving patient outcomes worldwide.
-          </p>
-        </div>
-        <div class="success-stories-grid">
-          <div class="success-story" data-aos="fade-up" data-aos-delay="100">
-            <div class="success-story-content">
-              <div class="success-story-meta">
-                <span class="success-story-tag">Orthopedics</span>
-                <span class="success-story-date"><i class="fas fa-calendar-alt"></i> March 2025</span>
-              </div>
-              <h3 class="success-story-title">OrthoLens AI: AI-Assisted Bone X-ray Analysis</h3>
-              <p class="success-story-excerpt">
-                OrthoLens AI provides an experimental workflow for bone X-ray analysis, including fracture detection and visual explanation of model predictions.
-              </p>
-              <div class="success-story-stats">
-                <div class="success-story-stat">
-                  <span class="success-story-stat-value">50%</span>
-                  <span class="success-story-stat-label">Time Saved</span>
-                </div>
-                <div class="success-story-stat">
-                  <span class="success-story-stat-value">Evaluation Pending</span>
-                  <span class="success-story-stat-label">Accuracy</span>
-                </div>
-              </div>
-            </div>
-            <a href="contact.html" class="success-story-link"><i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="success-story" data-aos="fade-up" data-aos-delay="200">
-            <div class="success-story-content">
-              <div class="success-story-meta">
-                <span class="success-story-tag">Radiology</span>
-                <span class="success-story-date"><i class="fas fa-calendar-alt"></i> February 2025</span>
-              </div>
-              <h3 class="success-story-title">Fortis Memorial: Enhancing Radiology Precision</h3>
-              <p class="success-story-excerpt">
-                Radiologists at Fortis Memorial have reported improved detection of subtle fractures, especially in complex cases with multiple injury sites.
-              </p>
-              <div class="success-story-stats">
-                <div class="success-story-stat">
-                  <span class="success-story-stat-value">15%</span>
-                  <span class="success-story-stat-label">Improved Detection</span>
-                </div>
-                <div class="success-story-stat">
-                  <span class="success-story-stat-value">1</span>
-                  <span class="success-story-stat-label">Project Deployments</span>
-                </div>
-              </div>
-            </div>
-            <a href="contact.html" class="success-story-link"><i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="success-story" data-aos="fade-up" data-aos-delay="300">
-            <div class="success-story-content">
-              <div class="success-story-meta">
-                <span class="success-story-tag">Research Impact</span>
-                <span class="success-story-date"><i class="fas fa-calendar-alt"></i> January 2025</span>
-              </div>
-              <h3 class="success-story-title">Training Next-Gen Orthopedic Surgeons</h3>
-              <p class="success-story-excerpt">
-                Medical institutions across India have integrated OrthoLens AI into their curriculum, helping students learn advanced fracture identification.
-              </p>
-              <div class="success-story-stats">
-                <div class="success-story-stat">
-                  <span class="success-story-stat-value">12</span>
-                  <span class="success-story-stat-label">Medical Schools</span>
-                </div>
-                <div class="success-story-stat">
-                  <span class="success-story-stat-value">3+</span>
-                  <span class="success-story-stat-label">Students Trained</span>
-                </div>
-              </div>
-            </div>
-            <a href="contact.html" class="success-story-link"><i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="success-stories-cta">
-          <a href="contact.html" class="btn-success-stories">
-            Share Your Success Story <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
 
@@ -1470,3 +1369,5 @@
     </script>
   </body>
 </html>
+
+

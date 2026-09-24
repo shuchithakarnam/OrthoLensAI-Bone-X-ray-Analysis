@@ -1,876 +1,735 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OrthoLens AI | About Ustitle>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="footer-styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-      /* Custom About Page Styles */
-      .about-hero {
-        padding: 12rem 0 6rem;
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, var(--surface-2) 0%, var(--white) 100%);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>OrthoLens AI — About</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="footer-styles.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --green: #2F6F3E;
+      --green-dark: #18321F;
+      --green-soft: #E8F0E8;
+      --cream: #F6F8F4;
+      --paper: #EEF3ED;
+      --ink: #18321F;
+      --muted: #5F6F63;
+      --line: rgba(24, 50, 31, 0.14);
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+
+    .about-hero {
+      padding: 9rem 7vw 5rem;
+      background:
+        linear-gradient(
+          135deg,
+          #F7F9F5 0%,
+          #E8F0E8 100%
+        );
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 5rem;
+      align-items: end;
+    }
+
+    .about-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .about-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      margin-top: 1rem;
+    }
+
+    .about-hero h1 span {
+      display: block;
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .about-hero-copy {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    /* INTRO */
+
+    .about-intro {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 7vw;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: 5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .intro-main h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 4vw, 4.3rem);
+      line-height: 1.05;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+    }
+
+    .intro-main p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.3rem;
+      max-width: 780px;
+    }
+
+    /* PRINCIPLES */
+
+    .principles {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 6rem 7vw;
+    }
+
+    .principles-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .principles-heading {
+      max-width: 700px;
+      margin-bottom: 3.5rem;
+    }
+
+    .principles-heading .section-kicker {
+      color: #AFC6B4;
+    }
+
+    .principles-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.6rem, 4.5vw, 4.8rem);
+      line-height: 1;
+      font-weight: 600;
+      margin-top: 0.8rem;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .principle {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .principle:last-child {
+      border-right: none;
+    }
+
+    .principle-number {
+      color: #AFC6B4;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .principle h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .principle p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    /* STORY */
+
+    .story {
+      padding: 7rem 7vw;
+      background: var(--paper);
+    }
+
+    .story-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .story-heading {
+      margin-bottom: 3.5rem;
+    }
+
+    .story-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 600;
+      margin-top: 0.8rem;
+    }
+
+    .story-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .story-row:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .story-index {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      color: var(--green);
+    }
+
+    .story-row h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .story-row p {
+      color: var(--muted);
+      max-width: 750px;
+    }
+
+    /* CURRENT SCOPE */
+
+    .scope {
+      padding: 7rem 7vw;
+      background: var(--cream);
+    }
+
+    .scope-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .scope-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+
+    .scope-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .scope-header p {
+      max-width: 380px;
+      color: var(--muted);
+    }
+
+    .scope-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .scope-item {
+      display: grid;
+      grid-template-columns: 70px 1fr 1.2fr;
+      gap: 2rem;
+      padding: 1.7rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .scope-item-number {
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+    }
+
+    .scope-item h3 {
+      font-size: 1.15rem;
+    }
+
+    .scope-item p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* NOTE */
+
+    .about-note {
+      padding: 5rem 7vw;
+      background: var(--green-soft);
+    }
+
+    .about-note-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-note-inner i {
+      color: var(--green);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-note-inner p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .about-hero-inner,
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
-      
-      .about-hero-shape {
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 80%;
-        height: 200%;
-        background: radial-gradient(circle at center, rgba(0, 98, 255, 0.05) 0%, rgba(234, 239, 255, 0) 70%);
-        border-radius: 50%;
-        z-index: 0;
-        animation: float 10s ease-in-out infinite;
+
+      .principles-grid {
+        grid-template-columns: 1fr;
       }
-      
-      .about-hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
+
+      .principle {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
       }
-      
-      .about-subtitle {
-        font-size: 1.25rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+
+      .principle:last-child {
+        border-bottom: none;
       }
-      
-      .about-title {
-        font-size: 3rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, var(--text) 0%, var(--primary) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+
+      .scope-header {
+        display: block;
       }
-      
-      .about-description {
-        font-size: 1.25rem;
-        color: var(--text-light);
-        margin-bottom: 2.5rem;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
+
+      .scope-header p {
+        margin-top: 1rem;
       }
-      
-      .about-section {
-        padding: 6rem 0;
-        position: relative;
+
+      .scope-item {
+        grid-template-columns: 50px 1fr;
       }
-      
-      .about-section.bg-light {
-        background-color: var(--surface-2);
-      }
-      
-      .section-header {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 4rem;
-      }
-      
-      .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--text);
-      }
-      
-      .section-subtitle {
-        font-size: 1.1rem;
-        color: var(--text-light);
-      }
-      
-      /* Mission & Vision Styles - Modern Flowing Design */
-      .mission-vision-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6rem;
-        margin-bottom: 4rem;
-        position: relative;
-      }
-      
-      .mission-vision-container::after {
-        content: "";
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        height: 80%;
-        width: 1px;
-        background: linear-gradient(to bottom, transparent, var(--primary-light), transparent);
-      }
-      
-      .mission-content, .vision-content {
-        position: relative;
-      }
-      
-      .mv-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1.5rem;
-        font-size: 1.75rem;
-        color: var(--primary);
-        position: relative;
-        background: none;
-      }
-      
-      .mv-icon::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(0, 98, 255, 0.1) 0%, rgba(0, 209, 255, 0.1) 100%);
-        border-radius: 50%;
-        transform: scale(1.2) rotate(-15deg);
-        z-index: -1;
-      }
-      
-      .mv-title {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-        color: var(--text);
-        position: relative;
-        display: inline-block;
-      }
-      
-      .mv-title::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-      }
-      
-      .mv-text {
-        color: var(--text-light);
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-      
-      /* Values Section - Modern Flowing Design */
-      .values-container {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 4rem 2rem;
-      }
-      
-      .value-item {
-        grid-column: span 2;
-        position: relative;
-        transition: transform 0.3s ease;
-      }
-      
-      .value-item:hover {
-        transform: translateY(-8px);
-      }
-      
-      .value-icon {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-        position: relative;
-        color: var(--primary);
-      }
-      
-      .value-icon::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(0, 98, 255, 0.08) 0%, rgba(0, 209, 255, 0.08) 100%);
-        border-radius: 50%;
-        transform: scale(1.2);
-        z-index: -1;
-      }
-      
-      .value-icon::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
-        bottom: -15px;
-        left: 0;
-      }
-      
-      .value-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-        color: var(--text);
-        position: relative;
-        display: inline-block;
-      }
-      
-      .value-description {
-        color: var(--text-light);
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      
-      /* Timeline Section - Modern Flowing Design */
-      .timeline {
-        position: relative;
-        max-width: 1100px;
-        margin: 3rem auto;
-        padding: 2rem 0;
-      }
-      
-      .timeline::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        margin-left: -1px;
-        width: 1px;
-        height: 100%;
-        background: linear-gradient(to bottom, transparent, var(--primary), transparent);
-      }
-      
-      .timeline-item {
-        position: relative;
-        margin-bottom: 6rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-      }
-      
-      .timeline-item:last-child {
-        margin-bottom: 0;
-      }
-      
-      .timeline-item:nth-child(odd) .timeline-content {
+
+      .scope-item p {
         grid-column: 2;
-        grid-row: 1;
-        padding-left: 4rem;
-        text-align: left;
       }
-      
-      .timeline-item:nth-child(even) .timeline-content {
-        grid-column: 1;
-        grid-row: 1;
-        padding-right: 4rem;
-        text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      .about-hero,
+      .about-intro,
+      .principles,
+      .story,
+      .scope,
+      .about-note {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
       }
-      
-      .timeline-content {
-        position: relative;
-        transition: transform 0.3s ease;
+
+      .about-hero {
+        padding-top: 7.5rem;
       }
-      
-      .timeline-item:nth-child(odd) .timeline-content:hover {
-        transform: translateX(10px);
+
+      .story-row {
+        grid-template-columns: 50px 1fr;
+        gap: 1rem;
       }
-      
-      .timeline-item:nth-child(even) .timeline-content:hover {
-        transform: translateX(-10px);
+
+      .scope-item {
+        display: block;
       }
-      
-      .timeline-year {
-        position: absolute;
-        top: 50%;
-        color: var(--primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        transform: translateY(-50%);
-        z-index: 2;
-        font-size: 2rem;
-        background: none;
-      }
-      
-      .timeline-item:nth-child(odd) .timeline-year {
-        left: -80px;
-      }
-      
-      .timeline-item:nth-child(even) .timeline-year {
-        right: -80px;
-      }
-      
-      .timeline-item::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        box-shadow: 0 0 0 5px rgba(0, 98, 255, 0.1);
-      }
-      
-      .timeline-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.75rem;
-        font-weight: 600;
-        color: var(--primary);
-        position: relative;
-        display: inline-block;
-      }
-      
-      .timeline-item:nth-child(odd) .timeline-title::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary), transparent);
-      }
-      
-      .timeline-item:nth-child(even) .timeline-title::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        right: 0;
-        width: 50px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary));
-      }
-      
-      .timeline-description {
-        color: var(--text-light);
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      
-      /* Stats Section - Modern Flowing Design */
-      .stats-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        position: relative;
-        padding: 2rem 0;
-      }
-      
-      .stat-block {
-        flex: 1;
-        min-width: 200px;
-        padding: 0 2rem;
-        margin-bottom: 2rem;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: transform 0.3s ease;
-      }
-      
-      .stat-block:hover {
-        transform: translateY(-10px);
-      }
-      
-      .stat-block::after {
-        content: "";
-        position: absolute;
-        top: 10%;
-        right: 0;
-        width: 1px;
-        height: 80%;
-        background: linear-gradient(to bottom, transparent, var(--primary-light) 30%, var(--primary-light) 70%, transparent);
-        opacity: 0.5;
-      }
-      
-      .stat-block:last-child::after {
-        display: none;
-      }
-      
-      .stat-icon {
-        position: relative;
-        width: auto;
-        height: auto;
-        border-radius: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.2rem;
-        color: var(--primary);
-        font-size: 2.5rem;
-        background: none;
-        transform: none;
-      }
-      
-      .stat-icon::before {
-        content: "";
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, rgba(0, 98, 255, 0.05) 0%, rgba(0, 209, 255, 0.05) 100%);
-        border-radius: 50%;
-        transform: scale(1) rotate(-15deg);
-        z-index: -1;
-      }
-      
-      .stat-number {
-        font-size: 3.5rem;
-        font-weight: 800;
+
+      .scope-item-number {
+        display: block;
         margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        line-height: 1;
       }
-      
-      .stat-label {
-        color: var(--text-light);
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-align: center;
-        position: relative;
-      }
-      
-      .stat-label::after {
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      }
-      
-      .team-preview {
-        margin-top: 5rem;
-        text-align: center;
-        position: relative;
-        padding-top: 3rem;
-      }
-      
-      .team-preview::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
-      }
-      
-      .team-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        background: none;
-        color: var(--primary);
-        border: 1px solid var(--primary);
-        border-radius: 50px;
-        padding: 1rem 2.5rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-      
-      .team-cta::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
-        transition: all 0.3s ease;
-        z-index: -1;
-      }
-      
-      .team-cta:hover {
-        color: white;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 98, 255, 0.15);
-      }
-      
-      .team-cta:hover::before {
-        width: 100%;
-      }
-      
-      @media (max-width: 992px) {
-        .about-title {
-          font-size: 2.5rem;
-        }
-        
-        .mission-vision-container {
-          grid-template-columns: 1fr;
-          gap: 4rem;
-        }
-        
-        .values-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .value-item {
-          grid-column: span 1;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .about-hero {
-          padding: 9rem 0 4rem;
-        }
-        
-        .about-title {
-          font-size: 2.2rem;
-        }
-        
-        .about-description {
-          font-size: 1.1rem;
-        }
-        
-        .section-title {
-          font-size: 2rem;
-        }
-        
-        .values-container {
-          grid-template-columns: 1fr;
-        }
-        
-        .timeline::before {
-          left: 30px;
-        }
-        
-        .timeline-item {
-          grid-template-columns: 1fr;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content,
-        .timeline-item:nth-child(even) .timeline-content {
-          grid-column: 1;
-          grid-row: 1;
-          padding-left: 60px;
-          padding-right: 0;
-          text-align: left;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-year,
-        .timeline-item:nth-child(even) .timeline-year {
-          left: 0;
-          top: 0;
-          transform: none;
-          width: 80px;
-        }
-        
-        .timeline-item::after {
-          left: 30px;
-        }
-        
-        .stat-block::after {
-          display: none;
-        }
-        
-        .stat-block {
-          flex-basis: 50%;
-        }
-      }
-      
-      @media (max-width: 576px) {
-        .stat-block {
-          flex-basis: 100%;
-        }
-      }
-      
-      /* Animations */
-      @keyframes float {
-        0% {
-          transform: translateY(0) rotate(0);
-        }
-        50% {
-          transform: translateY(-30px) rotate(8deg);
-        }
-        100% {
-          transform: translateY(0) rotate(0);
-        }
-      }
-    </style>
-  </head>
 
-  <body>
-    <!-- NAVIGATION PLACEHOLDER -->
-    <div id="nav-placeholder"></div>
+      .scope-item h3 {
+        margin-bottom: 0.4rem;
+      }
+    }
+  </style>
+</head>
 
-    <!-- CONTENT SECTIONS -->
-    <main class="about-page">
-      <!-- ABOUT HERO SECTION -->
-      <section class="about-hero">
-        <div class="about-hero-shape"></div>
-        <div class="container">
-          <div class="about-hero-content">
-            <p class="about-subtitle">Our Story</p>
-            <h1 class="about-title">Exploring AI-Assisted Bone X-ray Analysis</h1>
-            <p class="about-description">
-              OrthoLens AI explores computer vision and machine learning techniques for bone X-ray analysis, with a focus on fracture detection, estimation tasks, and explainable results.
+<body>
+
+  <!-- Shared navigation -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="about-hero">
+
+      <div class="about-hero-inner">
+
+        <div>
+          <div class="about-label">About the project</div>
+
+          <h1>
+            A closer
+            <span>look.</span>
+          </h1>
+        </div>
+
+        <div class="about-hero-copy">
+          OrthoLens AI is a computer-vision project focused on bone X-ray
+          analysis. The idea is simple: use machine learning to help organize
+          image analysis outputs in a way that is easier to explore, inspect,
+          and understand.
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- INTRO -->
+    <section class="about-intro">
+
+      <div class="intro-grid">
+
+        <div>
+          <div class="section-kicker">01 — What is OrthoLens?</div>
+        </div>
+
+        <div class="intro-main">
+
+          <h2>
+            Built around the image, not the hype.
+          </h2>
+
+          <p>
+            OrthoLens AI brings together a web interface, a Python backend,
+            and a YOLO-based computer-vision pipeline for bone X-ray analysis.
+          </p>
+
+          <p>
+            The current implementation focuses on fracture-related detection.
+            A user can upload an X-ray, send it through the model, and inspect
+            the resulting annotated image and available visual explanation.
+          </p>
+
+          <p>
+            The project is designed to make experimentation with medical
+            imaging AI more approachable while keeping the model output and
+            its limitations visible to the user.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="principles">
+
+      <div class="principles-inner">
+
+        <div class="principles-heading">
+
+          <div class="section-kicker">02 — Our approach</div>
+
+          <h2>
+            Three things guide the project.
+          </h2>
+
+        </div>
+
+        <div class="principles-grid">
+
+          <div class="principle">
+
+            <div class="principle-number">01</div>
+
+            <h3>Clarity</h3>
+
+            <p>
+              Present model outputs in a way that is understandable instead
+              of hiding the process behind a single result.
+            </p>
+
+          </div>
+
+          <div class="principle">
+
+            <div class="principle-number">02</div>
+
+            <h3>Experimentation</h3>
+
+            <p>
+              Treat datasets, models, inference settings, and explainability
+              methods as things that can be tested and improved.
+            </p>
+
+          </div>
+
+          <div class="principle">
+
+            <div class="principle-number">03</div>
+
+            <h3>Responsibility</h3>
+
+            <p>
+              Keep experimental model predictions distinct from professional
+              clinical interpretation and diagnosis.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- STORY -->
+    <section class="story">
+
+      <div class="story-inner">
+
+        <div class="story-heading">
+
+          <div class="section-kicker">03 — How it came together</div>
+
+          <h2>
+            From model to interface.
+          </h2>
+
+        </div>
+
+        <div class="story-row">
+
+          <div class="story-index">01</div>
+
+          <div>
+            <h3>Computer vision</h3>
+            <p>
+              The project uses an object-detection approach based on
+              Ultralytics YOLO to process bone X-ray images and identify
+              regions associated with the model's trained labels.
             </p>
           </div>
+
         </div>
-      </section>
 
-      <!-- MISSION & VISION SECTION -->
-      <section class="about-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Mission & Vision</h2>
-            <p class="section-subtitle">Our purpose and driving ambition in healthcare innovation</p>
+        <div class="story-row">
+
+          <div class="story-index">02</div>
+
+          <div>
+            <h3>Backend integration</h3>
+            <p>
+              FastAPI connects the image-upload workflow with model inference,
+              generated result files, health checks, and the browser interface.
+            </p>
           </div>
 
-          <div class="mission-vision-container">
-            <div class="mission-content">
-              <div class="mv-icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <h3 class="mv-title">Our Mission</h3>
-              <p class="mv-text">
-                To develop an accessible AI-assisted workflow for analyzing bone X-rays and presenting model predictions in a clear and interpretable format.
-              </p>
-              <p class="mv-text">
-                The project aims to make experimentation with AI-based bone X-ray analysis accessible through a simple web interface.
-              </p>
-            </div>
-
-            <div class="vision-content">
-              <div class="mv-icon">
-                <i class="fas fa-eye"></i>
-              </div>
-              <h3 class="mv-title">Our Vision</h3>
-              <p class="mv-text">
-                The project explores how AI can assist image analysis while keeping professional human interpretation at the center of medical decision-making.
-              </p>
-              <p class="mv-text">
-                The long-term goal is to build and evaluate reliable computer-vision models for bone X-ray analysis without overstating their clinical capabilities.
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- CORE VALUES SECTION -->
-      <section class="about-section bg-light">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Our Core Values</h2>
-            <p class="section-subtitle">The principles that guide everything we do</p>
+        <div class="story-row">
+
+          <div class="story-index">03</div>
+
+          <div>
+            <h3>Visual interpretation</h3>
+            <p>
+              Annotated outputs and explanation views are included so that
+              users can inspect where the model responded rather than only
+              receiving a text prediction.
+            </p>
           </div>
 
-          <div class="values-container">
-            <div class="value-item">
-              <div class="value-icon">
-                <i class="fas fa-microscope"></i>
-              </div>
-              <h3 class="value-title">Innovation</h3>
-              <p class="value-description">
-                We iteratively develop and evaluate computer-vision techniques for practical bone X-ray analysis tasks.
-              </p>
-            </div>
-
-            <div class="value-item">
-              <div class="value-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <h3 class="value-title">Reliability</h3>
-              <p class="value-description">
-                We aim to evaluate models transparently and clearly communicate their limitations rather than presenting experimental predictions as medical diagnoses.
-              </p>
-            </div>
-
-            <div class="value-item">
-              <div class="value-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <h3 class="value-title">Accessibility</h3>
-              <p class="value-description">
-                The project focuses on making AI-assisted X-ray analysis accessible for learning, experimentation, and research.
-              </p>
-            </div>
-
-            <div class="value-item">
-              <div class="value-icon">
-                <i class="fas fa-heartbeat"></i>
-              </div>
-              <h3 class="value-title">Patient-Centered</h3>
-              <p class="value-description">
-                We place patients at the heart of everything we do, designing our solutions to ultimately improve their care, recovery, and quality of life.
-              </p>
-            </div>
-
-            <div class="value-item">
-              <div class="value-icon">
-                <i class="fas fa-lock"></i>
-              </div>
-              <h3 class="value-title">Security</h3>
-              <p class="value-description">
-                The application is designed to avoid committing uploaded images and generated results to the source repository. Users should avoid uploading identifiable patient information.
-              </p>
-            </div>
-
-            <div class="value-item">
-              <div class="value-icon">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <h3 class="value-title">Collaboration</h3>
-              <p class="value-description">
-                The project can be extended with additional datasets, models, evaluation experiments, and explainability techniques.
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- TIMELINE SECTION -->
-      <section class="about-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Our Journey</h2>
-            <p class="section-subtitle">The evolution of OrthoLens AI from concept to reality</p>
+        <div class="story-row">
+
+          <div class="story-index">04</div>
+
+          <div>
+            <h3>Continuous improvement</h3>
+            <p>
+              The project can evolve through better datasets, improved model
+              evaluation, more robust explanation methods, and cleaner
+              user-facing workflows.
+            </p>
           </div>
 
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3 class="timeline-title">Research Begins</h3>
-                <p class="timeline-description">
-                  Initial research on leveraging deep learning for bone fracture detection. Our team compiled and annotated our first dataset of X-ray images to begin training our AI models.
-                </p>
-              </div>
-              <div class="timeline-year">2022</div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3 class="timeline-title">Prototype Development</h3>
-                <p class="timeline-description">
-                  OrthoLens AI was developed as an AI-assisted platform for analyzing bone X-rays, with a focus on fracture detection and explainable medical image analysis.
-                </p>
-              </div>
-              <div class="timeline-year">2023</div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3 class="timeline-title">Expanded Capabilities</h3>
-                <p class="timeline-description">
-                  Enhanced our AI model with Grad CAM visualization for better interpretability. We expanded detection capabilities to cover multiple types of fractures with improved accuracy reaching ongoing.
-                </p>
-              </div>
-              <div class="timeline-year">2024</div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h3 class="timeline-title">Official Launch</h3>
-                <p class="timeline-description">
-                  The OrthoLens AI platform brings bone X-ray analysis into a web-based workflow, providing model predictions and visual explanations to support further review.
-                </p>
-              </div>
-              <div class="timeline-year">2025</div>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- STATS SECTION -->
-      <section class="about-section bg-light">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Project Capabilities</h2>
-            <p class="section-subtitle">Current capabilities of the OrthoLens AI project</p>
+      </div>
+
+    </section>
+
+    <!-- CURRENT SCOPE -->
+    <section class="scope">
+
+      <div class="scope-inner">
+
+        <div class="scope-header">
+
+          <div>
+            <div class="section-kicker">04 — Current scope</div>
+            <h2>What exists today.</h2>
           </div>
 
-          <div class="stats-row">
-            <div class="stat-block">
-              <div class="stat-icon">
-                <i class="fas fa-x-ray"></i>
-              </div>
-              <div class="stat-number">AI</div>
-              <div class="stat-label">Analysis Pipeline</div>
-            </div>
+          <p>
+            The current release is centered on fracture-related X-ray
+            analysis. Other capabilities are considered future extensions
+            rather than existing features.
+          </p>
 
-            <div class="stat-block">
-              <div class="stat-icon">
-                <i class="fas fa-hospital-user"></i>
-              </div>
-              <div class="stat-number">3+</div>
-              <div class="stat-label">Core Analysis Tasks</div>
-            </div>
-
-            <div class="stat-block">
-              <div class="stat-icon">
-                <i class="fas fa-hospital"></i>
-              </div>
-              <div class="stat-number">1</div>
-              <div class="stat-label">Web Interface</div>
-            </div>
-
-            <div class="stat-block">
-              <div class="stat-icon">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div class="stat-number">Evaluation Pending</div>
-              <div class="stat-label">Evaluation Status</div>
-            </div>
-          </div>
-
-          <div class="team-preview">
-            <a href="team.html" class="team-cta">
-              Meet Our Team <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
         </div>
-      </section>
-    </main>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
+        <div class="scope-list">
 
-    <!-- Scripts -->
-    <script src="nav-handler.js"></script>
-    <script src="footer-handler.js"></script>
-    <script>
-      // Animation on scroll
-      const animatedSections = document.querySelectorAll('.mission-content, .vision-content, .value-item, .timeline-item, .stat-block');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      
-      animatedSections.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-    </script>
-  </body>
+          <div class="scope-item">
+
+            <div class="scope-item-number">01</div>
+
+            <h3>Fracture detection</h3>
+
+            <p>
+              YOLO-based inference using the currently available trained
+              detector.
+            </p>
+
+          </div>
+
+          <div class="scope-item">
+
+            <div class="scope-item-number">02</div>
+
+            <h3>Annotated results</h3>
+
+            <p>
+              Generated result images allow users to inspect detected regions
+              directly on the uploaded X-ray.
+            </p>
+
+          </div>
+
+          <div class="scope-item">
+
+            <div class="scope-item-number">03</div>
+
+            <h3>Visual explanation</h3>
+
+            <p>
+              Explanation outputs provide an additional way to inspect the
+              model's response.
+            </p>
+
+          </div>
+
+          <div class="scope-item">
+
+            <div class="scope-item-number">04</div>
+
+            <h3>Future research</h3>
+
+            <p>
+              Skeletal-age estimation and biological-sex classification may
+              be explored later using dedicated datasets and independently
+              evaluated models.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NOTE -->
+    <section class="about-note">
+
+      <div class="about-note-inner">
+
+        <i class="fas fa-info-circle"></i>
+
+        <p>
+          OrthoLens AI is intended for research and educational exploration.
+          Its model outputs should not be treated as medical diagnoses or as a
+          substitute for professional clinical interpretation.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="nav-handler.js"></script>
+  <script src="footer-handler.js"></script>
+
+</body>
 </html>

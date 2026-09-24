@@ -3,7 +3,7 @@
   <div class="container nav-container">
     <a href="index.html" class="logo">
       <i class="fas fa-bone"></i>
-      Medi<span>Scan</span>
+      Ortho<span>Lens AI</span>
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -11,8 +11,7 @@
       <a href="features.html">Features</a>
       <a href="detect.html">Detect</a>
       <a href="gradcam.html">Grad CAM</a>
-      <a href="team.html">Team</a>
-      <a href="contact.html">Contact</a>
+      <a href="project.html">Project</a>
     </div>
     <a href="detect.html" class="cta-button">
       Try it now <i class="fas fa-arrow-right"></i>
@@ -28,7 +27,7 @@
   <div class="mobile-nav-header">
     <a href="index.html" class="logo">
       <i class="fas fa-bone"></i>
-      Medi<span>Scan</span>
+      Ortho<span>Lens AI</span>
     </a>
     <button class="mobile-nav-close">
       <i class="fas fa-times"></i>
@@ -40,7 +39,350 @@
     <a href="features.html">Features</a>
     <a href="detect.html">Detect</a>
     <a href="gradcam.html">Grad CAM</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
+    <a href="project.html">Project</a>
   </div>
 </div>
+
+<style>
+  /* =====================================================
+     ORTHOLENS AI — RIGHT SIDE VERTICAL NAVIGATION
+     Desktop only. Mobile navigation remains unchanged.
+  ===================================================== */
+
+  @media (min-width: 769px) {
+
+    .header {
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      pointer-events: none;
+    }
+
+    .nav-container {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+    }
+
+    /* Brand stays on the left */
+    .logo {
+      position: fixed;
+      top: 28px;
+      left: 42px;
+      z-index: 1100;
+      pointer-events: auto;
+      color: #2F6F3E !important;
+    }
+
+    .logo span {
+      color: #18321F !important;
+    }
+
+    /* Right-side vertical strap */
+    .nav-links {
+      position: fixed !important;
+      top: 0;
+      right: 0;
+      width: 118px;
+      height: 100vh;
+
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+
+      gap: 26px !important;
+
+      padding: 32px 12px !important;
+
+      background: #234F2D !important;
+      border-left: 6px solid #18321F;
+
+      box-shadow: -8px 0 25px rgba(24, 50, 31, 0.12);
+
+      z-index: 1050;
+      pointer-events: auto;
+    }
+
+    .nav-links a {
+      display: block !important;
+      width: auto !important;
+
+      color: #F5F8F3 !important;
+      text-decoration: none !important;
+
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.02em;
+
+      white-space: nowrap;
+      text-align: center;
+
+      position: relative;
+      transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #C9DFC9 !important;
+      transform: translateX(-3px);
+    }
+
+    /* Keep active indication clean */
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+
+      width: 0;
+      height: 2px;
+
+      transform: translateX(-50%);
+
+      background: #C9DFC9 !important;
+
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 22px;
+    }
+
+    .nav-links a .active-indicator,
+    .nav-links .active-indicator {
+      display: none !important;
+    }
+
+    /* Hide desktop CTA inside the strap if present */
+    .nav-links .cta-button {
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0.6rem 0.75rem !important;
+      font-size: 0.75rem !important;
+      border-radius: 999px !important;
+    }
+
+    .mobile-menu-button {
+      display: none !important;
+    }
+
+    /* Prevent the right strap from covering page content */
+    body {
+      padding-right: 118px;
+    }
+  }
+
+  /* =====================================================
+     MOBILE — KEEP EXISTING MOBILE NAVIGATION
+  ===================================================== */
+
+  @media (max-width: 768px) {
+    body {
+      padding-right: 0;
+    }
+
+    .nav-links {
+      position: static !important;
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      border-left: none !important;
+      box-shadow: none !important;
+
+      display: none;
+    }
+
+    .logo {
+      position: static;
+    }
+  }
+</style>
+
+<style>
+  @media (min-width: 769px) {
+
+    /* Keep the OrthoLens logo cleanly in the upper-left */
+    .header .logo {
+      top: 28px !important;
+      left: 42px !important;
+      z-index: 1200 !important;
+    }
+
+    /* Remove the floating CTA that currently overlaps the logo */
+    .header .cta-button {
+      display: none !important;
+    }
+
+    /* Keep the right navigation strap consistent */
+    .header .nav-links {
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 118px !important;
+      height: 100vh !important;
+
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+
+      gap: 26px !important;
+
+      padding: 40px 10px !important;
+
+      background: #234F2D !important;
+      border-left: 6px solid #18321F !important;
+
+      box-shadow: -8px 0 25px rgba(24, 50, 31, 0.12) !important;
+    }
+
+    .header .nav-links a {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
+    }
+  }
+</style>
+
+<style>
+  @media (min-width: 769px) {
+
+    /* ==============================
+       ORTHOLENS AI LOGO
+    ============================== */
+
+    .header .logo {
+      position: fixed !important;
+      top: 28px !important;
+      left: 42px !important;
+      z-index: 1200 !important;
+    }
+
+    /* ==============================
+       TRY IT NOW BUTTON
+       Outside the strap, directly
+       beside it at the top
+    ============================== */
+
+    .header .nav-links .cta-button {
+      display: inline-flex !important;
+      position: fixed !important;
+
+      top: 24px !important;
+      right: 140px !important;
+
+      z-index: 1200 !important;
+
+      padding: 0.75rem 1.35rem !important;
+      border-radius: 999px !important;
+
+      background: #2F6F3E !important;
+      color: #F5F8F3 !important;
+
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+
+      box-shadow: 0 6px 18px rgba(24, 50, 31, 0.16) !important;
+    }
+
+    .header .nav-links .cta-button:hover {
+      background: #245A31 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* ==============================
+       RIGHT VERTICAL STRAP
+    ============================== */
+
+    .header .nav-links {
+      width: 140px !important;
+      height: 100vh !important;
+
+      top: 0 !important;
+      right: 0 !important;
+
+      display: flex !important;
+      flex-direction: column !important;
+
+      justify-content: center !important;
+      align-items: center !important;
+
+      gap: 30px !important;
+
+      padding: 40px 8px !important;
+
+      background: #234F2D !important;
+      border-left: 6px solid #18321F !important;
+
+      box-shadow: -8px 0 25px rgba(24, 50, 31, 0.12) !important;
+    }
+
+    /* ==============================
+       NAVIGATION FONT +2 SIZES
+    ============================== */
+
+    .header .nav-links a {
+      font-size: 1.05rem !important;
+      font-weight: 600 !important;
+      line-height: 1.2 !important;
+
+      color: #F5F8F3 !important;
+
+      white-space: nowrap !important;
+      text-align: center !important;
+    }
+
+    .header .nav-links a:hover {
+      color: #C9DFC9 !important;
+    }
+
+    /* Keep CTA separate from the
+       vertical navigation spacing */
+    .header .nav-links .cta-button::after {
+      display: none !important;
+    }
+  }
+</style>
+
+<style>
+  @media (min-width: 769px) {
+
+    /* Try it now button — outside the green strap */
+    .header .cta-button {
+      display: inline-flex !important;
+      position: fixed !important;
+
+      top: 24px !important;
+      right: 140px !important;
+
+      z-index: 1200 !important;
+
+      padding: 0.75rem 1.4rem !important;
+      border-radius: 999px !important;
+
+      background: #2F6F3E !important;
+      color: #F5F8F3 !important;
+
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+
+      text-decoration: none !important;
+
+      box-shadow: 0 6px 18px rgba(24, 50, 31, 0.16) !important;
+    }
+
+    .header .cta-button:hover {
+      background: #245A31 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Make sure it stays outside the vertical strap */
+    .header .nav-links {
+      right: 0 !important;
+    }
+  }
+</style>
+

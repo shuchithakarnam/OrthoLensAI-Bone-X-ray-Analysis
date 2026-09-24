@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OrthoLens AI | Project</title>
+  <meta
+    name="description"
+    content="Explore the OrthoLens AI bone X-ray analysis project, workflow, technology stack, model capabilities, and future development."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="footer-styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
+
+  <style>
+    :root {
+      --project-green: #2f6f3e;
+      --project-green-dark: #245a31;
+      --project-green-light: #7faf85;
+      --project-soft: #e8f0e8;
+      --project-bg: #f5f8f3;
+      --project-text: #18321f;
+      --project-muted: #647268;
+      --project-border: #d8e4d8;
+      --project-white: #ffffff;
+      --project-dark: #172019;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--project-bg);
+      color: var(--project-text);
+    }
+
+    .project-page {
+      padding-top: 95px;
+    }
+
+    /* HERO */
+    .project-hero {
+      padding: 78px 0 86px;
+      background:
+        radial-gradient(
+          circle at 80% 25%,
+          rgba(127, 175, 133, 0.17),
+          transparent 32%
+        ),
+        linear-gradient(135deg, #f9fbf8 0%, #edf4ec 100%);
+    }
+
+    .project-hero-inner {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .project-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--project-soft);
+      color: var(--project-green-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .project-kicker i {
+      font-size: 0.55rem;
+    }
+
+    .project-hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+      line-height: 1.01;
+      letter-spacing: -0.055em;
+    }
+
+    .project-hero h1 span {
+      color: var(--project-green);
+    }
+
+    .project-hero p {
+      max-width: 680px;
+      margin: 0 0 28px;
+      color: var(--project-muted);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .project-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 17px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .project-btn.primary {
+      background: var(--project-green);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(47, 111, 62, 0.16);
+    }
+
+    .project-btn.primary:hover {
+      background: var(--project-green-dark);
+      transform: translateY(-2px);
+    }
+
+    .project-linkedin { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--project-border); border-radius: 12px; background: rgba(255,255,255,0.82); color: var(--project-green-dark); text-decoration: none; font-size: 1.05rem; transition: 0.2s ease; } .project-linkedin:hover { transform: translateY(-2px); background: var(--project-green); color: #fff; border-color: var(--project-green); } .project-btn.secondary {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--project-border);
+      color: var(--project-green-dark);
+    }
+
+    .project-btn.secondary:hover {
+      transform: translateY(-2px);
+      border-color: #b9ccb9;
+    }
+
+    /* PROJECT SNAPSHOT */
+    .project-snapshot {
+      padding: 19px;
+      border: 1px solid var(--project-border);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 20px 48px rgba(36, 90, 49, 0.09);
+    }
+
+    .snapshot-window {
+      overflow: hidden;
+      border-radius: 17px;
+      background: var(--project-dark);
+    }
+
+    .snapshot-top {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 13px 15px;
+      background: #202a22;
+    }
+
+    .snapshot-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #8da293;
+    }
+
+    .snapshot-label {
+      margin-left: 8px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.68rem;
+    }
+
+    .snapshot-content {
+      padding: 26px;
+    }
+
+    .snapshot-brand {
+      margin-bottom: 21px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .snapshot-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .snapshot-card {
+      min-height: 90px;
+      padding: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .snapshot-card i {
+      margin-bottom: 11px;
+      color: #9ccaa3;
+    }
+
+    .snapshot-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 0.76rem;
+    }
+
+    .snapshot-card span {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.66rem;
+      line-height: 1.45;
+    }
+
+    /* GENERAL */
+    .project-section {
+      padding: 92px 0;
+      background: var(--project-white);
+    }
+
+    .project-section.alt {
+      background: var(--project-bg);
+    }
+
+    .project-container {
+      width: min(1100px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .project-header {
+      max-width: 730px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+
+    .project-header-kicker {
+      margin-bottom: 10px;
+      color: var(--project-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .project-header h2 {
+      margin: 0 0 13px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .project-header p {
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* OVERVIEW */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+    }
+
+    .overview-card {
+      padding: 27px;
+      border: 1px solid var(--project-border);
+      border-radius: 19px;
+      background: var(--project-white);
+    }
+
+    .overview-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .overview-card p {
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .project-facts {
+      display: grid;
+      gap: 11px;
+    }
+
+    .project-fact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      background: var(--project-bg);
+    }
+
+    .project-fact i {
+      width: 29px;
+      height: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-radius: 9px;
+      background: var(--project-soft);
+      color: var(--project-green);
+      font-size: 0.75rem;
+    }
+
+    .project-fact span {
+      color: var(--project-muted);
+      font-size: 0.76rem;
+    }
+
+    .project-fact strong {
+      color: var(--project-text);
+    }
+
+    /* WORKFLOW */
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 11px;
+    }
+
+    .workflow-step {
+      position: relative;
+      padding: 22px 17px;
+      border: 1px solid var(--project-border);
+      border-radius: 17px;
+      background: var(--project-white);
+    }
+
+    .workflow-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 31px;
+      height: 31px;
+      margin-bottom: 15px;
+      border-radius: 9px;
+      background: var(--project-soft);
+      color: var(--project-green-dark);
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .workflow-step i {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--project-green);
+      font-size: 1rem;
+    }
+
+    .workflow-step h3 {
+      margin: 0 0 7px;
+      font-size: 0.86rem;
+    }
+
+    .workflow-step p {
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 0.71rem;
+      line-height: 1.6;
+    }
+
+    /* TECH */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .tech-card {
+      padding: 22px;
+      border: 1px solid var(--project-border);
+      border-radius: 17px;
+      background: var(--project-white);
+      transition: 0.2s ease;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(36, 90, 49, 0.07);
+    }
+
+    .tech-icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      border-radius: 11px;
+      background: var(--project-soft);
+      color: var(--project-green);
+    }
+
+    .tech-card h3 {
+      margin: 0 0 6px;
+      font-size: 0.88rem;
+    }
+
+    .tech-card p {
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 0.73rem;
+      line-height: 1.6;
+    }
+
+    /* MODEL LABELS */
+    .label-box {
+      padding: 28px;
+      border: 1px solid var(--project-border);
+      border-radius: 20px;
+      background: var(--project-white);
+    }
+
+    .label-box h3 {
+      margin: 0 0 7px;
+      font-size: 1rem;
+    }
+
+    .label-box > p {
+      margin: 0 0 20px;
+      color: var(--project-muted);
+      font-size: 0.8rem;
+      line-height: 1.65;
+    }
+
+    .labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .label-pill {
+      padding: 8px 11px;
+      border: 1px solid var(--project-border);
+      border-radius: 999px;
+      background: var(--project-bg);
+      color: var(--project-green-dark);
+      font-size: 0.7rem;
+      font-weight: 650;
+    }
+
+    /* LIMITATIONS */
+    .limitations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .limitation {
+      padding: 23px;
+      border: 1px solid var(--project-border);
+      border-radius: 17px;
+      background: var(--project-white);
+    }
+
+    .limitation i {
+      margin-bottom: 13px;
+      color: var(--project-green);
+      font-size: 1rem;
+    }
+
+    .limitation h3 {
+      margin: 0 0 7px;
+      font-size: 0.88rem;
+    }
+
+    .limitation p {
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 0.73rem;
+      line-height: 1.65;
+    }
+
+    /* FUTURE */
+    .future-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .future-item {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid var(--project-border);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .future-item i {
+      margin-top: 2px;
+      color: var(--project-green);
+    }
+
+    .future-item h3 {
+      margin: 0 0 5px;
+      font-size: 0.84rem;
+    }
+
+    .future-item p {
+      margin: 0;
+      color: var(--project-muted);
+      font-size: 0.73rem;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .project-cta {
+      padding: 76px 0;
+      background: var(--project-dark);
+      color: #fff;
+      text-align: center;
+    }
+
+    .project-cta-inner {
+      width: min(900px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .project-cta .project-header-kicker {
+      color: #9ccaa3;
+    }
+
+    .project-cta h2 {
+      margin: 0 0 13px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.045em;
+    }
+
+    .project-cta p {
+      max-width: 630px;
+      margin: 0 auto 24px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .project-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 17px;
+      border-radius: 12px;
+      background: #fff;
+      color: var(--project-green-dark);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .project-cta-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 950px) {
+      .project-hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .limitations {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .project-page {
+        padding-top: 88px;
+      }
+
+      .project-hero {
+        padding: 52px 0 60px;
+      }
+
+      .project-hero-inner,
+      .project-container,
+      .project-cta-inner {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .project-snapshot {
+        padding: 10px;
+      }
+
+      .snapshot-content {
+        padding: 19px;
+      }
+
+      .workflow,
+      .tech-grid,
+      .future-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="project-page">
+
+    <!-- HERO -->
+    <section class="project-hero">
+
+      <div class="project-hero-inner">
+
+        <div>
+
+          <div class="project-kicker">
+            <i class="fas fa-circle"></i>
+            Project overview
+          </div>
+
+          <h1>
+            Inside <span>OrthoLens AI.</span>
+          </h1>
+
+          <p>
+            OrthoLens AI is a computer-vision project built to explore
+            bone X-ray analysis through object detection, visual overlays,
+            and a simple browser-based interface. The project connects a
+            trained YOLO model with a FastAPI backend and a lightweight
+            frontend.
+          </p>
+
+          <div class="project-hero-actions">
+
+            <a href="detect.html" class="project-btn primary">
+              <i class="fas fa-search"></i>
+              Open detector
+            </a>
+
+            <a href="https://www.linkedin.com/in/shuchitha-karnam-299752226/" target="_blank" rel="noopener noreferrer" class="project-linkedin" aria-label="LinkedIn profile" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+          </div>
+
+        </div>
+
+        <div class="project-snapshot">
+
+          <div class="snapshot-window">
+
+            <div class="snapshot-top">
+              <span class="snapshot-dot"></span>
+              <span class="snapshot-dot"></span>
+              <span class="snapshot-dot"></span>
+              <span class="snapshot-label">ortholens-ai</span>
+            </div>
+
+            <div class="snapshot-content">
+
+              <div class="snapshot-brand">
+                OrthoLens AI
+              </div>
+
+              <div class="snapshot-row">
+
+                <div class="snapshot-card">
+                  <i class="fas fa-brain"></i>
+                  <strong>YOLO detection</strong>
+                  <span>Object detection model for X-ray regions.</span>
+                </div>
+
+                <div class="snapshot-card">
+                  <i class="fas fa-server"></i>
+                  <strong>FastAPI backend</strong>
+                  <span>Handles uploads and model inference.</span>
+                </div>
+
+              </div>
+
+              <div class="snapshot-row">
+
+                <div class="snapshot-card">
+                  <i class="fas fa-image"></i>
+                  <strong>Visual output</strong>
+                  <span>Annotated images and explanation views.</span>
+                </div>
+
+                <div class="snapshot-card">
+                  <i class="fas fa-laptop-code"></i>
+                  <strong>Web interface</strong>
+                  <span>Simple browser-based analysis workflow.</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="project-section">
+
+      <div class="project-container">
+
+        <div class="project-header">
+
+          <div class="project-header-kicker">
+            The idea
+          </div>
+
+          <h2>
+            A small project built around one clear workflow.
+          </h2>
+
+          <p>
+            Upload an X-ray, send it through the backend, run the trained
+            detector, and make the returned information easier to inspect
+            through the interface.
+          </p>
+
+        </div>
+
+        <div class="overview-grid">
+
+          <div class="overview-card">
+
+            <h3>What OrthoLens AI explores</h3>
+
+            <p>
+              The project combines machine learning and web development
+              to demonstrate an end-to-end computer-vision application.
+              The focus is on connecting a trained detection model with
+              an accessible interface rather than presenting the system
+              as a clinical diagnostic product.
+            </p>
+
+          </div>
+
+          <div class="overview-card">
+
+            <div class="project-facts">
+
+              <div class="project-fact">
+                <i class="fas fa-project-diagram"></i>
+                <span><strong>Architecture:</strong> frontend + FastAPI + YOLO</span>
+              </div>
+
+              <div class="project-fact">
+                <i class="fas fa-file-image"></i>
+                <span><strong>Input:</strong> JPG / PNG X-ray images</span>
+              </div>
+
+              <div class="project-fact">
+                <i class="fas fa-crosshairs"></i>
+                <span><strong>Output:</strong> detected regions and confidence</span>
+              </div>
+
+              <div class="project-fact">
+                <i class="fas fa-graduation-cap"></i>
+                <span><strong>Use:</strong> research, learning, and demonstration</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="project-section alt">
+
+      <div class="project-container">
+
+        <div class="project-header">
+
+          <div class="project-header-kicker">
+            System workflow
+          </div>
+
+          <h2>How the pieces connect.</h2>
+
+          <p>
+            Each stage has a specific job, from selecting the image to
+            preparing the visual result.
+          </p>
+
+        </div>
+
+        <div class="workflow">
+
+          <article class="workflow-step">
+            <div class="workflow-number">01</div>
+            <i class="fas fa-upload"></i>
+            <h3>Upload</h3>
+            <p>
+              The browser accepts a JPG or PNG X-ray.
+            </p>
+          </article>
+
+          <article class="workflow-step">
+            <div class="workflow-number">02</div>
+            <i class="fas fa-server"></i>
+            <h3>API</h3>
+            <p>
+              FastAPI receives and stores the image.
+            </p>
+          </article>
+
+          <article class="workflow-step">
+            <div class="workflow-number">03</div>
+            <i class="fas fa-brain"></i>
+            <h3>Inference</h3>
+            <p>
+              The trained YOLO model processes the image.
+            </p>
+          </article>
+
+          <article class="workflow-step">
+            <div class="workflow-number">04</div>
+            <i class="fas fa-bullseye"></i>
+            <h3>Detection</h3>
+            <p>
+              Bounding regions and confidence values are returned.
+            </p>
+          </article>
+
+          <article class="workflow-step">
+            <div class="workflow-number">05</div>
+            <i class="fas fa-eye"></i>
+            <h3>Visualize</h3>
+            <p>
+              The frontend presents the output for inspection.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section class="project-section">
+
+      <div class="project-container">
+
+        <div class="project-header">
+
+          <div class="project-header-kicker">
+            Technology
+          </div>
+
+          <h2>The stack behind the project.</h2>
+
+          <p>
+            A compact stack keeps the project understandable while still
+            covering model inference, image processing, APIs, and the web UI.
+          </p>
+
+        </div>
+
+        <div class="tech-grid">
+
+          <article class="tech-card">
+            <div class="tech-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <h3>Python</h3>
+            <p>
+              Main language for backend logic and model integration.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>FastAPI</h3>
+            <p>
+              Backend API used for image uploads and inference requests.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>YOLO</h3>
+            <p>
+              Object-detection model used to identify trained X-ray classes.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <h3>OpenCV</h3>
+            <p>
+              Used for image handling and visual result generation.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MODEL -->
+    <section class="project-section alt">
+
+      <div class="project-container">
+
+        <div class="project-header">
+
+          <div class="project-header-kicker">
+            Current model
+          </div>
+
+          <h2>
+            What the detector currently recognizes.
+          </h2>
+
+          <p>
+            The trained model contains several class labels covering
+            bone and fracture-related regions.
+          </p>
+
+        </div>
+
+        <div class="label-box">
+
+          <h3>Available model labels</h3>
+
+          <p>
+            These are the classes currently exposed by the model used by
+            the OrthoLens AI backend.
+          </p>
+
+          <div class="labels">
+
+            <span class="label-pill">Elbow positive</span>
+            <span class="label-pill">Fingers positive</span>
+            <span class="label-pill">Forearm fracture</span>
+            <span class="label-pill">Humerus</span>
+            <span class="label-pill">Humerus fracture</span>
+            <span class="label-pill">Shoulder fracture</span>
+            <span class="label-pill">Wrist positive</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LIMITATIONS -->
+    <section class="project-section">
+
+      <div class="project-container">
+
+        <div class="project-header">
+
+          <div class="project-header-kicker">
+            Current scope
+          </div>
+
+          <h2>What the prototype does — and doesn't.</h2>
+
+          <p>
+            Being clear about the project's boundaries is part of making
+            a machine-learning demo useful and honest.
+          </p>
+
+        </div>
+
+        <div class="limitations">
+
+          <article class="limitation">
+            <i class="fas fa-chart-area"></i>
+            <h3>Dataset-dependent behavior</h3>
+            <p>
+              Performance can vary when an input image differs from the
+              data distribution represented during training.
+            </p>
+          </article>
+
+          <article class="limitation">
+            <i class="fas fa-user-md"></i>
+            <h3>Not a clinical tool</h3>
+            <p>
+              The current project is intended for experimentation,
+              education, and demonstration rather than medical diagnosis.
+            </p>
+          </article>
+
+          <article class="limitation">
+            <i class="fas fa-fire"></i>
+            <h3>Prototype explanation</h3>
+            <p>
+              The current visual explanation is a heatmap-style overlay
+              generated from detected regions rather than a verified
+              gradient-based Grad-CAM implementation.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FUTURE -->
+    <section class="project-section alt">
+
+      <div class="project-container">
+
+        <div class="project-header">
+
+          <div class="project-header-kicker">
+            Future development
+          </div>
+
+          <h2>Where the project can grow.</h2>
+
+          <p>
+            The current version provides a foundation for deeper model
+            evaluation, better explanation methods, and broader testing.
+          </p>
+
+        </div>
+
+        <div class="future-list">
+
+          <article class="future-item">
+            <i class="fas fa-database"></i>
+            <div>
+              <h3>Broader dataset evaluation</h3>
+              <p>
+                Test generalization across additional X-ray datasets and
+                different image distributions.
+              </p>
+            </div>
+          </article>
+
+          <article class="future-item">
+            <i class="fas fa-sliders-h"></i>
+            <div>
+              <h3>Model evaluation</h3>
+              <p>
+                Add clearer evaluation metrics and structured validation
+                instead of relying only on interactive examples.
+              </p>
+            </div>
+          </article>
+
+          <article class="future-item">
+            <i class="fas fa-lightbulb"></i>
+            <div>
+              <h3>Improved explainability</h3>
+              <p>
+                Explore validated gradient-based explanation techniques
+                and compare their usefulness with detection outputs.
+              </p>
+            </div>
+          </article>
+
+          <article class="future-item">
+            <i class="fas fa-layer-group"></i>
+            <div>
+              <h3>Cleaner deployment</h3>
+              <p>
+                Move from local development servers toward a more
+                structured deployment architecture.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta">
+
+      <div class="project-cta-inner">
+
+        <div class="project-header-kicker">
+          Explore the project
+        </div>
+
+        <h2>See OrthoLens AI in action.</h2>
+
+        <p>
+          Try the detection workflow or explore the source code behind
+          the project.
+        </p>
+
+        <a href="detect.html" class="project-cta-btn">
+          <i class="fas fa-arrow-right"></i>
+          Open OrthoLens AI
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="nav-handler.js"></script>
+  <script src="footer-handler.js"></script>
+
+</body>
+</html>
+
+
+

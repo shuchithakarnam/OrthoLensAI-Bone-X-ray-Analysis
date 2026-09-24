@@ -274,3 +274,6 @@ async def get_gradcam(image_id: str):
     # Otherwise, would typically regenerate it here
     # For this example, we'll return an error if it doesn't exist
     raise HTTPException(status_code=404, detail="Grad-CAM not available for this image")
+
+
+

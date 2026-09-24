@@ -1,725 +1,963 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OrthoLens AI | Features</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="footer-styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-      /* Features page styles matching index and about page themes */
-      .features-hero {
-        padding: 12rem 0 6rem;
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, var(--surface-2) 0%, var(--white) 100%);
-      }
-      
-      .features-hero-shape {
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 80%;
-        height: 200%;
-        background: radial-gradient(circle at center, rgba(0, 98, 255, 0.05) 0%, rgba(234, 239, 255, 0) 70%);
-        border-radius: 50%;
-        z-index: 0;
-        animation: float 10s ease-in-out infinite;
-      }
-      
-      .features-hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      
-      .features-subtitle {
-        font-size: 1.25rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-      
-      .features-title {
-        font-size: 3rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, var(--text) 0%, var(--primary) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      
-      .features-description {
-        font-size: 1.25rem;
-        color: var(--text-light);
-        margin-bottom: 2.5rem;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>OrthoLens AI — Features</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="footer-styles.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --green: #2F6F3E;
+      --green-dark: #18321F;
+      --green-mid: #4E875A;
+      --green-soft: #E8F0E8;
+      --bg: #F5F8F3;
+      --bg-alt: #EEF3ED;
+      --white: #FFFFFF;
+      --text: #18321F;
+      --muted: #5F6F63;
+      --line: rgba(24, 50, 31, 0.14);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .features-hero {
+      padding: 9rem 7vw 5rem;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(47, 111, 62, 0.08),
+          transparent 30%
+        ),
+        var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .features-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    .features-hero h1 {
+      max-width: 900px;
+      margin-top: 1rem;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.4rem, 7vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .features-hero h1 span {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .features-hero p {
+      max-width: 700px;
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* =====================================================
+       FEATURE OVERVIEW
+    ===================================================== */
+
+    .overview {
+      padding: 6rem 7vw;
+      background: var(--white);
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 3rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .section-header p {
+      max-width: 380px;
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin-top: 1px;
+      background: var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2.5rem;
+      min-height: 280px;
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .feature-card:hover {
+      background: #F7FAF6;
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      margin-bottom: 1.4rem;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 1.3rem;
+    }
+
+    .feature-number {
+      color: var(--green);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.7rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 0.95rem;
+    }
+
+    /* =====================================================
+       MODEL SECTION
+    ===================================================== */
+
+    .model-section {
+      padding: 7rem 7vw;
+      background: var(--bg-alt);
+    }
+
+    .model-header {
+      max-width: 780px;
+      margin-bottom: 3rem;
+    }
+
+    .model-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 600;
+      margin-top: 0.8rem;
+    }
+
+    .model-header p {
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    .model-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(24, 50, 31, 0.05);
+    }
+
+    .model-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .flow-step {
+      min-height: 130px;
+      padding: 1.2rem;
+      border-radius: 14px;
+      background: var(--bg);
+      border: 1px solid rgba(24, 50, 31, 0.08);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-step i {
+      color: var(--green);
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .flow-step strong {
+      font-size: 0.95rem;
+    }
+
+    .flow-step span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 0.25rem;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--green-mid);
+      font-size: 1rem;
+    }
+
+    /* =====================================================
+       LABELS
+    ===================================================== */
+
+    .labels-section {
+      padding: 7rem 7vw;
+      background: var(--white);
+    }
+
+    .labels-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .labels-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.7rem, 5vw, 4.8rem);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .labels-title p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    .labels-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .label-row {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .label-index {
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+    }
+
+    .label-name {
+      font-weight: 600;
+    }
+
+    /* =====================================================
+       EXPLAINABILITY
+    ===================================================== */
+
+    .explainability {
+      padding: 7rem 7vw;
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    .explainability-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .explainability h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .explainability .eyebrow {
+      color: #B8CCBC;
+      margin-bottom: 1rem;
+    }
+
+    .explainability .eyebrow::before {
+      background: #B8CCBC;
+    }
+
+    .explainability-copy p {
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .explainability-points {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .explainability-point {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.92rem;
+    }
+
+    .explainability-point i {
+      color: #AFC6B4;
+      font-size: 0.7rem;
+      margin-top: 0.4rem;
+    }
+
+    /* =====================================================
+       FUTURE
+    ===================================================== */
+
+    .future-section {
+      padding: 7rem 7vw;
+      background: var(--bg);
+    }
+
+    .future-header {
+      max-width: 760px;
+      margin-bottom: 3rem;
+    }
+
+    .future-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 600;
+      margin-top: 0.8rem;
+    }
+
+    .future-header p {
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .future-card {
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .future-card i {
+      color: var(--green);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .future-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .future-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* =====================================================
+       DISCLAIMER
+    ===================================================== */
+
+    .features-note {
+      padding: 1.3rem 7vw;
+      border-top: 1px solid var(--line);
+      background: var(--green-soft);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 950px) {
+      .feature-grid,
+      .future-grid {
+        grid-template-columns: 1fr;
       }
 
-      /* Features content area */
-      .features-container {
-        max-width: 1200px;
-        margin: 0 auto 6rem;
-        padding: 0 1.5rem;
+      .model-flow {
+        grid-template-columns: 1fr;
       }
 
-      /* Feature section styling */
-      .feature-section {
-        padding: 6rem 0;
-        position: relative;
-      }
-      
-      .feature-section:not(:last-child) {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      }
-      
-      .section-header {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 4rem;
-      }
-      
-      .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--text);
-      }
-      
-      .section-subtitle {
-        font-size: 1.1rem;
-        color: var(--text-light);
-      }
-
-      /* Features item grid similar to about page values */
-      .feature-items {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-        margin: 0 auto;
-      }
-
-      .feature-item {
-        position: relative;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-        padding-top: 1.5rem;
-      }
-      
-      .feature-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-      }
-
-      /* Feature icon styling */
-      .feature-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 70px;
-        height: 70px;
-        border-radius: 20px;
-        margin-bottom: 1.5rem;
-        font-size: 1.75rem;
-        color: var(--white);
-      }
-
-      /* Different gradient colors for variety */
-      .feature-section:nth-child(1) .feature-item:nth-child(1) .feature-icon {
-        background: linear-gradient(135deg, #4BA3FF, #0062FF);
-      }
-
-      .feature-section:nth-child(1) .feature-item:nth-child(2) .feature-icon {
-        background: linear-gradient(135deg, #00D1FF, #00A0FF);
-      }
-
-      .feature-section:nth-child(1) .feature-item:nth-child(3) .feature-icon {
-        background: linear-gradient(135deg, #5E7BFE, #3851E0);
-      }
-
-      .feature-section:nth-child(2) .feature-item:nth-child(1) .feature-icon {
-        background: linear-gradient(135deg, #869cdd, #838fc1);
-      }
-
-      .feature-section:nth-child(2) .feature-item:nth-child(2) .feature-icon {
-        background: linear-gradient(135deg, #50CAFF, #0088CC);
-      }
-
-      .feature-section:nth-child(2) .feature-item:nth-child(3) .feature-icon {
-        background: linear-gradient(135deg, #6D94FF, #4361E8);
-      }
-
-      .feature-section:nth-child(3) .feature-item:nth-child(1) .feature-icon {
-        background: linear-gradient(135deg, #5D8BFF, #3254D9);
-      }
-
-      .feature-section:nth-child(3) .feature-item:nth-child(2) .feature-icon {
-        background: linear-gradient(135deg, #41B1FF, #1F93E8);
-      }
-
-      .feature-section:nth-child(3) .feature-item:nth-child(3) .feature-icon {
-        background: linear-gradient(135deg, #599AFF, #2E58E0);
-      }
-
-      .feature-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-        color: var(--text);
-      }
-
-      .feature-description {
-        color: var(--text-light);
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .feature-link {
-        display: inline-flex;
-        align-items: center;
-        color: var(--primary);
-        font-weight: 600;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-      }
-
-      .feature-link i {
-        margin-left: 5px;
-        transition: transform 0.3s ease;
-      }
-
-      .feature-link:hover i {
-        transform: translateX(3px);
-      }
-
-      /* Stats section styled like about page */
-      .stats-section {
-        padding: 6rem 0;
-        position: relative;
-        background-color: var(--surface-2);
-      }
-      
-      .stats-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0 -1rem;
-      }
-      
-      .stat-block {
-        flex: 1;
-        min-width: 200px;
-        padding: 0 1rem;
-        margin-bottom: 2rem;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-      
-      .stat-block::after {
-        content: "";
-        position: absolute;
-        top: 20px;
-        right: 0;
-        width: 1px;
-        height: 70%;
-        background: linear-gradient(to bottom, transparent, var(--primary-light) 30%, var(--primary-light) 70%, transparent);
-      }
-      
-      .stat-block:last-child::after {
+      .flow-arrow {
         display: none;
       }
-      
-      .stat-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.2rem;
-        color: var(--white);
-        font-size: 1.5rem;
-        transform: rotate(-5deg);
-        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      }
-      
-      .stat-number {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        line-height: 1;
-      }
-      
-      .stat-label {
-        color: var(--text-light);
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-align: center;
+
+      .labels-layout,
+      .explainability-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
 
-      /* Testimonials section styled like index page */
-      .testimonials {
-        padding: 6rem 0;
-        position: relative;
+      .section-header {
+        display: block;
       }
 
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+      .section-header p {
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .features-hero,
+      .overview,
+      .model-section,
+      .labels-section,
+      .explainability,
+      .future-section,
+      .features-note {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
       }
 
-      .testimonial {
-        background: var(--surface-1);
-        border-radius: 16px;
-        padding: 2.5rem;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-        position: relative;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+      .features-hero {
+        padding-top: 7.5rem;
       }
 
-      .testimonial-quote {
-        font-size: 1.25rem;
-        color: var(--text);
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-        line-height: 1.6;
-        position: relative;
+      .feature-card {
+        padding: 1.8rem;
       }
 
-      .testimonial-quote::before {
-        content: '"';
-        position: absolute;
-        top: -20px;
-        left: -10px;
-        font-size: 5rem;
-        color: rgba(0, 98, 255, 0.1);
-        font-family: serif;
-        line-height: 1;
+      .model-box {
+        padding: 1rem;
       }
 
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+      .flow-step {
+        min-height: 100px;
       }
+    }
+  </style>
+</head>
 
-      .testimonial-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--primary);
-        color: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 1.25rem;
-      }
+<body>
 
-      .testimonial-info {
-        flex: 1;
-      }
+  <!-- Shared Navigation -->
+  <div id="nav-placeholder"></div>
 
-      .testimonial-name {
-        font-weight: 600;
-        font-size: 1.1rem;
-        margin-bottom: 0.25rem;
-      }
+  <main>
 
-      .testimonial-role {
-        color: var(--text-light);
-        font-size: 0.9rem;
-      }
+    <!-- ==================================================
+         HERO
+    ================================================== -->
 
-      /* Responsive styles */
-      @media (max-width: 1200px) {
-        .feature-items {
-          gap: 2rem;
-        }
-      }
+    <section class="features-hero">
 
-      @media (max-width: 992px) {
-        .feature-items {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .features-title {
-          font-size: 2.5rem;
-        }
-        
-        .stats-container {
-          padding: 3rem 2rem;
-        }
-      }
+      <div class="features-hero-inner">
 
-      @media (max-width: 768px) {
-        .feature-items,
-        .testimonials-grid {
-          grid-template-columns: 1fr;
-        }
-        
-        .features-hero {
-          padding: 9rem 0 4rem;
-        }
-        
-        .features-title {
-          font-size: 2.2rem;
-        }
-        
-        .features-description {
-          font-size: 1.1rem;
-        }
-        
-        .section-title {
-          font-size: 2rem;
-        }
-        
-        .stat-block {
-          flex-basis: 50%;
-        }
-        
-        .stat-block::after {
-          display: none;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .stat-block {
-          flex-basis: 100%;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- NAVIGATION PLACEHOLDER -->
-    <div id="nav-placeholder"></div>
-
-    <!-- FEATURES CONTENT -->
-    <main class="features-page">
-      <!-- Header Section -->
-      <section class="features-hero">
-        <div class="features-hero-shape"></div>
-        <div class="container">
-          <div class="features-hero-content">
-            <p class="features-subtitle">OrthoLens AI</p>
-            <h1 class="features-title">AI-Assisted Bone X-ray Analysis</h1>
-            <p class="features-description">Explore an AI-assisted platform for bone X-ray analysis, fracture detection, model-based estimation, and visual explainability.</p>
-          </div>
+        <div class="eyebrow">
+          Inside OrthoLens AI
         </div>
-      </section>
 
-      <!-- Main Content with feature sections matching about page style -->
-      <main>
-        <!-- AI Detection Features -->
-        <section class="feature-section">
-          <div class="container">
-            <div class="section-header">
-              <h2 class="section-title">AI-Powered Detection</h2>
-              <p class="section-subtitle">Our state-of-the-art artificial intelligence algorithms have been designed to analyze bone X-ray images and identify regions associated with possible fractures</p>
+        <h1>
+          The tools behind
+          <span>the lens.</span>
+        </h1>
+
+        <p>
+          OrthoLens AI combines computer vision, image processing, model
+          inference, and visual result generation into one X-ray analysis
+          workflow.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================
+         FEATURE OVERVIEW
+    ================================================== -->
+
+    <section class="overview">
+
+      <div class="section-inner">
+
+        <div class="section-header">
+
+          <h2>
+            What it does.
+          </h2>
+
+          <p>
+            The current application is centered on fracture-related analysis
+            of uploaded bone X-rays.
+          </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              <i class="fas fa-bone"></i>
             </div>
-            
-            <div class="feature-items">
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-brain"></i>
-                </div>
-                <h3 class="feature-title">Deep Learning Model</h3>
-                <p class="feature-description">The current computer-vision pipeline uses a YOLO-based detection model to identify suspected fracture regions in uploaded X-ray images.</p>
-                <a href="#" class="feature-link">Learn more <i class="fas fa-chevron-right"></i></a>
-              </div>
-              
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-bolt"></i>
-                </div>
-                <h3 class="feature-title">Real-time Analysis</h3>
-                <p class="feature-description">Upload a bone X-ray and receive an automated model prediction together with an annotated result image.</p>
-                <a href="#" class="feature-link">Learn more <i class="fas fa-chevron-right"></i></a>
-              </div>
-              
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="feature-title">Model Evaluation</h3>
-                <p class="feature-description">Model performance will be evaluated using documented test data and reported transparently as the project develops.</p>
-                <a href="#" class="feature-link">See study results <i class="fas fa-chevron-right"></i></a>
-              </div>
+
+            <div class="feature-number">01 — DETECTION</div>
+
+            <h3>Fracture region detection</h3>
+
+            <p>
+              A YOLO-based object-detection model analyzes the image and
+              produces bounding regions for labels learned during training.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              <i class="fas fa-image"></i>
             </div>
+
+            <div class="feature-number">02 — RESULTS</div>
+
+            <h3>Annotated X-ray output</h3>
+
+            <p>
+              The application creates a result image that lets users inspect
+              the regions returned by the model directly on the X-ray.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              <i class="fas fa-gauge-high"></i>
+            </div>
+
+            <div class="feature-number">03 — CONFIDENCE</div>
+
+            <h3>Model confidence</h3>
+
+            <p>
+              Predictions include confidence values from the detector so users
+              can distinguish the model's output from a clinical conclusion.
+            </p>
+
+          </article>
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+
+            <div class="feature-number">04 — EXPLANATION</div>
+
+            <h3>Visual explanation</h3>
+
+            <p>
+              The project includes an explanation view that highlights regions
+              associated with detected objects for easier model inspection.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================
+         MODEL FLOW
+    ================================================== -->
+
+    <section class="model-section">
+
+      <div class="section-inner">
+
+        <div class="model-header">
+
+          <div class="eyebrow">
+            Analysis pipeline
           </div>
-        </section>
-        
-        <!-- Visualization Features -->
-        <section class="feature-section bg-light">
-          <div class="container">
-            <div class="section-header">
-              <h2 class="section-title">Advanced Visualization</h2>
-              <p class="section-subtitle">See beyond the diagnosis with our comprehensive visualization tools that highlight fracture locations and provide detailed insights</p>
+
+          <h2>
+            From upload to result.
+          </h2>
+
+          <p>
+            The system keeps the inference process simple and traceable:
+            image input is processed by the backend, passed to the detector,
+            and returned as an inspectable result.
+          </p>
+
+        </div>
+
+        <div class="model-box">
+
+          <div class="model-flow">
+
+            <div class="flow-step">
+              <i class="fas fa-upload"></i>
+              <strong>Upload</strong>
+              <span>X-ray image</span>
             </div>
-            
-            <div class="feature-items">
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-map-marked-alt"></i>
-                </div>
-                <h3 class="feature-title">Fracture Mapping</h3>
-                <p class="feature-description">Detected regions are displayed directly on the X-ray so users can inspect where the model identified a possible fracture.</p>
-                <a href="#" class="feature-link">View examples <i class="fas fa-chevron-right"></i></a>
-              </div>
-              
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-layer-group"></i>
-                </div>
-                <h3 class="feature-title">Grad-CAM Technology</h3>
-                <p class="feature-description">Explore visual explanations that highlight image regions associated with the model's prediction.</p>
-                <a href="./gradcam.html" class="feature-link">Explore Grad-CAM <i class="fas fa-chevron-right"></i></a>
-              </div>
-              
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-file-medical-alt"></i>
-                </div>
-                <h3 class="feature-title">Detailed Reports</h3>
-                <p class="feature-description">Review annotated images, model confidence, and analysis outputs in one results interface.</p>
-                <a href="#" class="feature-link">Sample report <i class="fas fa-chevron-right"></i></a>
-              </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
             </div>
+
+            <div class="flow-step">
+              <i class="fas fa-server"></i>
+              <strong>Backend</strong>
+              <span>FastAPI</span>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-step">
+              <i class="fas fa-brain"></i>
+              <strong>YOLO model</strong>
+              <span>Inference</span>
+            </div>
+
           </div>
-        </section>
-        
-        <!-- Clinical Features -->
-        <section class="feature-section">
-          <div class="container">
-            <div class="section-header">
-              <h2 class="section-title">Extended X-ray Analysis</h2>
-              <p class="section-subtitle">OrthoLens AI seamlessly integrates into existing clinical workflows to enhance efficiency without disrupting established protocols</p>
+
+          <div class="model-flow" style="margin-top: 0.7rem;">
+
+            <div class="flow-step">
+              <i class="fas fa-square"></i>
+              <strong>Regions</strong>
+              <span>Detected areas</span>
             </div>
-            
-            <div class="feature-items">
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-hospital-user"></i>
-                </div>
-                <h3 class="feature-title">Age Estimation</h3>
-                <p class="feature-description">Provide an experimental model-based estimate of skeletal age from an appropriate X-ray input. This is an AI estimate, not a clinical determination.</p>
-                <a href="#" class="feature-link">Learn more <i class="fas fa-chevron-right"></i></a>
-              </div>
-              
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-sync-alt"></i>
-                </div>
-                <h3 class="feature-title">Biological-Sex Estimation</h3>
-                <p class="feature-description">Provide an experimental biological-sex classification from X-ray features when a compatible model is available. This output is a model estimate and should not be treated as definitive.</p>
-                <a href="#" class="feature-link">Compatible systems <i class="fas fa-chevron-right"></i></a>
-              </div>
-              
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-user-md"></i>
-                </div>
-                <h3 class="feature-title">Explainable Results</h3>
-                <p class="feature-description">Present predictions together with visual explanations so users can better understand the model output.</p>
-                <a href="#" class="feature-link">See how it works <i class="fas fa-chevron-right"></i></a>
-              </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
             </div>
+
+            <div class="flow-step">
+              <i class="fas fa-chart-simple"></i>
+              <strong>Confidence</strong>
+              <span>Model score</span>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-step">
+              <i class="fas fa-eye"></i>
+              <strong>Inspect</strong>
+              <span>Visual output</span>
+            </div>
+
           </div>
-        </section>
-        
-        <!-- Stats Section styled like about page -->
-        <section class="stats-section">
-          <div class="container">
-            <div class="section-header">
-              <h2 class="section-title">Project Capabilities</h2>
-              <p class="section-subtitle">Current capabilities of the OrthoLens AI project</p>
-            </div>
 
-            <div class="stats-row">
-              <div class="stat-block">
-                <div class="stat-icon">
-                  <i class="fas fa-x-ray"></i>
-                </div>
-                <div class="stat-number">AI</div>
-                <div class="stat-label">Analysis Pipeline</div>
-              </div>
+        </div>
 
-              <div class="stat-block">
-                <div class="stat-icon">
-                  <i class="fas fa-hospital-user"></i>
-                </div>
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Core Analysis Tasks</div>
-              </div>
+      </div>
 
-              <div class="stat-block">
-                <div class="stat-icon">
-                  <i class="fas fa-hospital"></i>
-                </div>
-                <div class="stat-number">1</div>
-                <div class="stat-label">Web Interface</div>
-              </div>
+    </section>
 
-              <div class="stat-block">
-                <div class="stat-icon">
-                  <i class="fas fa-check-circle"></i>
-                </div>
-                <div class="stat-number">Evaluation Pending</div>
-                <div class="stat-label">Evaluation Status</div>
-              </div>
-            </div>
+    <!-- ==================================================
+         MODEL LABELS
+    ================================================== -->
+
+    <section class="labels-section">
+
+      <div class="section-inner labels-layout">
+
+        <div class="labels-title">
+
+          <div class="eyebrow">
+            Current detector
           </div>
-        </section>
-      </main>
-    </main>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
+          <h2>
+            Seven trained labels.
+          </h2>
 
-    <!-- Scripts -->
-    <script src="nav-handler.js"></script>
-    <script src="footer-handler.js"></script>
-    <script>
-      // Header scroll effect
-      window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
+          <p>
+            These are the labels currently exposed by the available model
+            rather than a list of all possible fracture types.
+          </p>
 
-      // Mobile menu toggle
-      const mobileMenuButton = document.querySelector('.mobile-menu-button');
-      const mobileNavClose = document.querySelector('.mobile-nav-close');
-      const mobileNav = document.querySelector('.mobile-nav');
+        </div>
 
-      if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', () => {
-          mobileNav.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      }
+        <div class="labels-list">
 
-      if (mobileNavClose) {
-        mobileNavClose.addEventListener('click', () => {
-          mobileNav.classList.remove('active');
-          document.body.style.overflow = '';
-        });
-      }
+          <div class="label-row">
+            <div class="label-index">01</div>
+            <div class="label-name">Elbow positive</div>
+          </div>
 
-      // Close mobile nav when clicking a link
-      const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-      if (mobileNavLinks.length > 0) {
-        mobileNavLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
-          });
-        });
-      }
+          <div class="label-row">
+            <div class="label-index">02</div>
+            <div class="label-name">Fingers positive</div>
+          </div>
 
-      // Animation on scroll with Intersection Observer
-      const animatedSections = document.querySelectorAll('.feature-item, .stat-block');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      
-      animatedSections.forEach(el => {
-        observer.observe(el);
-      });
+          <div class="label-row">
+            <div class="label-index">03</div>
+            <div class="label-name">Forearm fracture</div>
+          </div>
 
-      // Stats counter animation for the new statistics format
-      const statsSection = document.querySelector('.stats-section');
-      const statNumbers = document.querySelectorAll('.stat-number');
-      let animated = false;
+          <div class="label-row">
+            <div class="label-index">04</div>
+            <div class="label-name">Humerus</div>
+          </div>
 
-      const statsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !animated) {
-          animated = true;
-          
-          // Animate the numbers when they come into view
-          statNumbers.forEach(statEl => {
-            const value = statEl.textContent;
-            const hasPlus = value.includes('+');
-            const numericValue = parseFloat(value.replace(/[^\d.-]/g, ''));
-            
-            if (isNaN(numericValue)) return;
-            
-            // Reset to zero
-            statEl.textContent = '0';
-            
-            // Animate up to the target number
-            let start = 0;
-            const end = numericValue;
-            const duration = 2000;
-            const startTime = performance.now();
-            
-            function updateCounter(currentTime) {
-              const elapsedTime = currentTime - startTime;
-              const progress = Math.min(elapsedTime / duration, 1);
-              // Using cubic easing for a nice effect
-              const easeProgress = 1 - Math.pow(1 - progress, 3);
-              
-              const value = Math.floor(easeProgress * end);
-              
-              // Format the number appropriately
-              statEl.textContent = value.toString() + (hasPlus ? '+' : '');
-              
-              if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-              } else {
-                statEl.textContent = numericValue.toString() + (hasPlus ? '+' : '');
-              }
-            }
-            
-            requestAnimationFrame(updateCounter);
-          });
-        }
-      }, { threshold: 0.5 });
+          <div class="label-row">
+            <div class="label-index">05</div>
+            <div class="label-name">Humerus fracture</div>
+          </div>
 
-      if (statsSection) {
-        statsObserver.observe(statsSection);
-      }
-    </script>
-  </body>
+          <div class="label-row">
+            <div class="label-index">06</div>
+            <div class="label-name">Shoulder fracture</div>
+          </div>
+
+          <div class="label-row">
+            <div class="label-index">07</div>
+            <div class="label-name">Wrist positive</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================
+         EXPLAINABILITY
+    ================================================== -->
+
+    <section class="explainability">
+
+      <div class="explainability-inner">
+
+        <div>
+
+          <div class="eyebrow">
+            Explainability
+          </div>
+
+          <h2>
+            Don't just see
+            the prediction.
+          </h2>
+
+        </div>
+
+        <div class="explainability-copy">
+
+          <p>
+            OrthoLens AI includes visual outputs intended to make model
+            behavior easier to inspect.
+          </p>
+
+          <p>
+            These visualizations help show where the system responded, but
+            they should be understood as model-analysis tools rather than
+            evidence that a particular region is clinically diagnostic.
+          </p>
+
+          <div class="explainability-points">
+
+            <div class="explainability-point">
+              <i class="fas fa-circle"></i>
+              <span>View annotated detection regions.</span>
+            </div>
+
+            <div class="explainability-point">
+              <i class="fas fa-circle"></i>
+              <span>Compare the original and processed image.</span>
+            </div>
+
+            <div class="explainability-point">
+              <i class="fas fa-circle"></i>
+              <span>Inspect confidence values alongside predictions.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================
+         FUTURE
+    ================================================== -->
+
+    <section class="future-section">
+
+      <div class="section-inner">
+
+        <div class="future-header">
+
+          <div class="eyebrow">
+            What's next
+          </div>
+
+          <h2>
+            Where OrthoLens can grow.
+          </h2>
+
+          <p>
+            Future capabilities require dedicated datasets, independently
+            trained models, and evaluation before being presented as
+            implemented features.
+          </p>
+
+        </div>
+
+        <div class="future-grid">
+
+          <article class="future-card">
+            <i class="fas fa-ruler-combined"></i>
+            <h3>Skeletal-age estimation</h3>
+            <p>
+              A dedicated model could estimate skeletal age from appropriate
+              X-ray inputs.
+            </p>
+          </article>
+
+          <article class="future-card">
+            <i class="fas fa-chart-column"></i>
+            <h3>Model evaluation</h3>
+            <p>
+              Add documented validation metrics, error analysis, and
+              reproducible evaluation reports.
+            </p>
+          </article>
+
+          <article class="future-card">
+            <i class="fas fa-microscope"></i>
+            <h3>Improved explainability</h3>
+            <p>
+              Explore stronger explanation methods and compare how reliably
+              they reflect model behavior.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================
+         DISCLAIMER
+    ================================================== -->
+
+    <div class="features-note">
+      OrthoLens AI is intended for research and educational exploration.
+      Model outputs are not medical diagnoses and should not replace
+      professional clinical interpretation.
+    </div>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="nav-handler.js"></script>
+  <script src="footer-handler.js"></script>
+
+</body>
 </html>

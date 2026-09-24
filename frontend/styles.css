@@ -1,18 +1,18 @@
 :root {
   /* Modern color palette */
-  --primary: #0062FF;
-  --primary-dark: #0048c2;
-  --secondary: #EAEFFF;
-  --accent: #00D1FF;
-  --text: #15173D;
-  --text-light: #596080;
+  --primary: #2F6F3E;
+  --primary-dark: #245A31;
+  --secondary: #E8F0E8;
+  --accent: #7FAF85;
+  --text: #18321F;
+  --text-light: #5F6F63;
   --bg: #FFFFFF;
   --white: #ffffff;
   --error: #FF8A80;
   --success: #81C784;
   --bone: #FAFBFF;
   --surface-1: #FFFFFF;
-  --surface-2: #F5F7FF;
+  --surface-2: #F5F8F3;
   --shadow: 0 4px 20px rgba(0, 98, 255, 0.08);
   --card-shadow: 0 8px 30px rgba(0, 98, 255, 0.05);
   --transition: all 0.3s ease;
@@ -418,15 +418,15 @@ body {
 }
 
 .feature:nth-child(1) .feature-icon {
-  background: linear-gradient(135deg, #4BA3FF, #0062FF);
+  background: linear-gradient(135deg, #78A982, #2F6F3E);
 }
 
 .feature:nth-child(2) .feature-icon {
-  background: linear-gradient(135deg, #00D1FF, #00A0FF);
+  background: linear-gradient(135deg, #7FAF85, #5F9469);
 }
 
 .feature:nth-child(3) .feature-icon {
-  background: linear-gradient(135deg, #5E7BFE, #3851E0);
+  background: linear-gradient(135deg, #628D6B, #356B42);
 }
 
 .feature-title {
@@ -447,7 +447,7 @@ body {
 }
 
 .stats-container {
-  background: linear-gradient(135deg, var(--primary) 0%, #3851E0 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #356B42 100%);
   border-radius: 24px;
   padding: 4rem;
   color: var(--white);
@@ -625,7 +625,7 @@ body {
 }
 
 .cta-container {
-  background: linear-gradient(135deg, var(--primary) 0%, #3851E0 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #356B42 100%);
   border-radius: 24px;
   padding: 5rem 3rem;
   color: var(--white);
