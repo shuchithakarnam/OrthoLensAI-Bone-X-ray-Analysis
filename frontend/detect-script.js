@@ -1,7 +1,7 @@
 // OrthoLens AI - Frontend Script
 document.addEventListener('DOMContentLoaded', function() {
     // Backend API URL - update this to match your server address
-    const API_URL = 'http://localhost:8000';
+    const API_URL = '';
     
     // Elements
     const dropArea = document.getElementById('drop-area');
@@ -319,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 });
+
 
 
 

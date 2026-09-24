@@ -69,7 +69,7 @@ app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the YOLOv8 detection API!"}
+    return FileResponse(os.path.join("frontend", "index.html"))
 
 @app.get("/status")
 async def get_status():
@@ -277,3 +277,7 @@ async def get_gradcam(image_id: str):
 
 
 
+
+
+
+app.mount('/', StaticFiles(directory='frontend', html=True), name='frontend')
