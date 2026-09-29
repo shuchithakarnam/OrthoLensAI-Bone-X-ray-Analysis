@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Backend API URL - update this to match your server address
     const API_URL = '';
-    
     // Elements
     const dropArea = document.getElementById('drop-area');
     const browseBtn = document.getElementById('browse-btn');
