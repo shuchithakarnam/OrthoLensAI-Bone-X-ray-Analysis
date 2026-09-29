@@ -16,7 +16,6 @@ from fastapi.staticfiles import StaticFiles
 import traceback
 
 app = FastAPI()
-
 # Configure logging with more details
 logging.basicConfig(
     level=logging.INFO,
