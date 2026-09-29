@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => console.error('Error loading navigation:', error));
   }
-  
   // Set the active navigation link
   function setActiveNavLink(currentPage) {
     if (!currentPage) currentPage = 'index.html'; // Default to home page
