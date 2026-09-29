@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearElement) {
       yearElement.textContent = new Date().getFullYear();
     }
-    
     // Back to top button functionality
     const backToTopButton = document.querySelector('.back-to-top');
     if (backToTopButton) {
